@@ -260,7 +260,7 @@ while ciclo:
         ubicacion=ubicacion.lower()
         precio=precio.lower()
         tipo=tipo.lower()
-        print ("Ingreso de nueva película en la base de datos en curso")
+        print ("Ingreso el nuevo restaurante en la base de datos en curso")
         agregar_restaurante(nombre_restaurante,ubicacion,precio,tipo)
         
     elif (opcion==3):
