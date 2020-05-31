@@ -35,12 +35,12 @@ def recomendacion(nombre_restaurante):
   
     #Encontramos el tercer dato de restaurante 
     try:
-        class = "MATCH (n:Database {nombre:'"+nombre_restaurante+"'}) RETURN n.tipo"        
+        tipos = "MATCH (n:Database {nombre:'"+nombre_restaurante+"'}) RETURN n.tipo"        
     except Exception:
         print("")
 
     try:
-        query = "MATCH (n:Database {tipo:'"+class+"'}) RETURN n.nombre"
+        query = "MATCH (n:Database {tipo:'"+tipos+"'}) RETURN n.nombre"
         results = db.query(query, data_contents=True)
         a = results.rows
         restaurantes3 = []
