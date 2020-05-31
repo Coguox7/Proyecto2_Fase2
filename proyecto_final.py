@@ -170,7 +170,7 @@ def recomendacion(nombre_restaurante):
             if x not in restaurantes1:
                 restaurantes1.append(x[0])
         for i in restaurantes1:
-            print i    
+            print(i)    
     except Exception:
         print ("")
 
@@ -185,7 +185,7 @@ def recomendacion(nombre_restaurante):
             if x not in restaurantes2:
                 restaurantes2.append(x[0])
         for i in restaurantes2:
-            print i
+            print(i)
     except Exception:
         print("")
         
@@ -200,7 +200,7 @@ def recomendacion(nombre_restaurante):
             if x not in restaurantes3:
                 restaurantes3.append(x[0])
         for i in restaurantes3:
-            print i
+            print(i)
     except Exception:
         print("")
         
@@ -214,7 +214,7 @@ def recomendacion(nombre_restaurante):
                 lista_recomendacion.append (i)
     print ("\nlista de restaurantes recomendas")
     for i in lista_recomendacion:
-        print i
+        print(i)
     
 """
 ******************************Fin de las funciones**************************************
@@ -223,14 +223,13 @@ def recomendacion(nombre_restaurante):
 
 #Biblioteca para poder trabajar con excel
 import xlrd
-
 #Parte donde empezamos a trabajar con excel
 documento = xlrd.open_workbook("data_base.xlsx")
 hoja = documento.sheet_by_index(0)
 
 
 from neo4jrestclient.client import GraphDatabase
-base_datos = GraphDatabase("http://localhost:7474",username="neo4j", password="12345")
+base_datos = GraphDatabase("http://localhost:8097",username="neo4j", password="12345")
 dataB = base_datos.labels.create("Restaurante")
 datos = base_datos.labels.create("datos")
 
@@ -252,10 +251,10 @@ while ciclo:
     #si opcion = 2, se solicitan datos del restaurante y luego se ingresa a la base de datos
     elif (opcion==2):
 
-        nombre_restaurante=raw_input("Ingresar nombre del restaurante: ")
-        ubicacion= raw_input ("Ingrese datos 1: ")
-        precio= raw_input ("Ingrese datos 2: ")
-        tipo= raw_input ("Ingrese datos 3: ")
+        nombre_restaurante=input("Ingresar nombre del restaurante: ")
+        ubicacion=input ("Ingrese datos 1: ")
+        precio=input ("Ingrese datos 2: ")
+        tipo=input ("Ingrese datos 3: ")
 
         nombre_restaurante=nombre_restaurante.lower()
         ubicacion=ubicacion.lower()
@@ -265,19 +264,21 @@ while ciclo:
         agregar_restaurante(nombre_restaurante,ubicacion,precio,tipo)
         
     elif (opcion==3):
-        print ("recomendacion")
-        nombre_restaurante=raw_input("Ingrese nombre de su restaurante favorito: ")
+        print("recomendacion")
+        nombre_restaurante=input("Ingrese nombre de su restaurante favorito: ")
         recomendacion(nombre_restaurante)
     elif (opcion==4):
-        print ("pendiente")
+        print("pendiente")
     elif (opcion==5):
-        print ("pendiente")
+        print("pendiente")
     elif (opcion==6): 
         ciclo=False
     else:
         print ("Ha ingresado un valor invalido, reinicie el programa")
         ciclo=False
         
+        
+
         
         
 
