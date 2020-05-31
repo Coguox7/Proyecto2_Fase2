@@ -3,8 +3,8 @@ Universidad del Valle de Guatemala
 Algoritmos y estructura de datos
 Proyecto final: Algoritmo de recomendación
 
-Camilo Mayen - 16150
-Juan Carlos Menchu - 17184
+Camilo Mayen - 17184
+Juan Carlos Menchu - 16150
 Pablo Coguox - 19960
 """
 
